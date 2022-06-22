@@ -16,7 +16,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build . -t hainhapp.azurecr.io/hainhapp:${{ github.sha }}
+        docker build ./node/ -t hainhapp.azurecr.io/hainhapp:${{ github.sha }}
         docker push hainhapp.azurecr.io/hainhapp:${{ github.sha }}     
 
     - uses: azure/webapps-deploy@v2
